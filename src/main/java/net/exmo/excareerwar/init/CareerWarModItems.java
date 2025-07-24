@@ -61,7 +61,7 @@ public class CareerWarModItems {
 			MagicArrowProjectile magicArrow = new MagicArrowProjectile(level, entity);
 			magicArrow.setPos(entity.position().add(0, entity.getEyeHeight() - magicArrow.getBoundingBox().getYsize() * .5f, 0).add(entity.getForward()));
 			magicArrow.shoot(entity.getLookAngle());
-			magicArrow.setDamage(6.5Ff);
+			magicArrow.setDamage(6.5F);
 			magicArrow.getPersistentData().putBoolean("Plus", true);
 			return magicArrow;
 		}
