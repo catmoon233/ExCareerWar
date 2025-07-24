@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "career_war:item/knowledge_book"
+  }
+}

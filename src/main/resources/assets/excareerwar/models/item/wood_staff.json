@@ -1,0 +1,7 @@
+{
+  "parent": "career_war:custom/fz",
+  "textures": {
+    "0": "career_war:block/fazhang",
+    "particle": "career_war:item/string"
+  }
+}

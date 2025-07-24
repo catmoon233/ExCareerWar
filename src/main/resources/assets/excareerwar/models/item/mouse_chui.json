@@ -1,0 +1,7 @@
+{
+  "parent": "excareerwar:custom/mouse_chui",
+  "textures": {
+    "1": "excareerwar:block/mouse_chui",
+    "particle": "excareerwar:block/mouse_chui"
+  }
+}

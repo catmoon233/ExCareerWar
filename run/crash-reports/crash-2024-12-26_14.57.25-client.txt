@@ -1,0 +1,219 @@
+---- Minecraft Crash Report ----
+// There are four lights!
+
+Time: 2024-12-26 14:57:25
+Description: Unexpected error
+
+java.lang.NullPointerException: Cannot invoke "net.minecraft.server.MinecraftServer.getPlayerList()" because the return value of "net.minecraft.world.level.Level.getServer()" is null
+	at io.redspace.ironsspellbooks.capabilities.magic.MagicManager.spawnParticles(MagicManager.java:120) ~[irons-spells-n-spellbooks-855414-5934925_mapped_official_1.20.1.jar:1.20.1-3.4.0.5] {re:classloading}
+	at net.exmo.excareerwar.content.skills.ErlangShen.RootPurpose.extracted(RootPurpose.java:93) ~[main/:?] {re:classloading}
+	at net.exmo.excareerwar.content.skills.ErlangShen.RootPurpose.use(RootPurpose.java:59) ~[main/:?] {re:classloading}
+	at net.exmo.excareerwar.content.SkillHandle.useSkill(SkillHandle.java:305) ~[main/:?] {re:classloading}
+	at net.exmo.excareerwar.network.Skill3Message.pressAction(Skill3Message.java:54) ~[main/:?] {re:classloading}
+	at net.exmo.excareerwar.init.CareerWarModKeyMappings$3.setDown(CareerWarModKeyMappings.java:59) ~[main/:?] {re:classloading}
+	at net.minecraft.client.KeyMapping.set(KeyMapping.java:54) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.KeyboardHandler.keyPress(KeyboardHandler.java:422) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.KeyboardHandler.lambda$setup$8(KeyboardHandler.java:462) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:90) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:computing_frames,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.KeyboardHandler.lambda$setup$9(KeyboardHandler.java:461) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at org.lwjgl.glfw.GLFWKeyCallbackI.callback(GLFWKeyCallbackI.java:44) ~[lwjgl-glfw-3.3.1.jar:build 7] {}
+	at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.3.1.jar:build 7] {}
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403) ~[lwjgl-glfw-3.3.1.jar:build 7] {}
+	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:175) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:188) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at com.mojang.blaze3d.platform.Window.updateDisplay(Window.java:274) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1170) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:mixin,pl:accesstransformer:B,xf:fml:customskinloader:MinecraftTransformer,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,xf:fml:customskinloader:MinecraftTransformer,pl:mixin:APP:excareerwar.mixins.json:MinecraftMixin,pl:mixin:APP:tslatentitystatus.mixins.json:client.MinecraftMixin,pl:mixin:APP:moonlight-common.mixins.json:MinecraftMixin,pl:mixin:APP:mixins.irons_spellbooks.json:MinecraftMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:718) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:mixin,pl:accesstransformer:B,xf:fml:customskinloader:MinecraftTransformer,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,xf:fml:customskinloader:MinecraftTransformer,pl:mixin:APP:excareerwar.mixins.json:MinecraftMixin,pl:mixin:APP:tslatentitystatus.mixins.json:client.MinecraftMixin,pl:mixin:APP:moonlight-common.mixins.json:MinecraftMixin,pl:mixin:APP:mixins.irons_spellbooks.json:MinecraftMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:218) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.3.12.jar:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.3.12.jar:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19) ~[fmlloader-1.20.1-47.3.12.jar:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135) ~[fmlloader-1.20.1-47.3.12.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Suspected Mods: 
+	Iron's Spells 'n Spellbooks (irons_spellbooks), Version: 1.20.1-3.4.0.5
+		Issue tracker URL: https://github.com/iron431/Irons-Spells-n-Spellbooks/issues
+		at TRANSFORMER/irons_spellbooks@1.20.1-3.4.0.5/io.redspace.ironsspellbooks.capabilities.magic.MagicManager.spawnParticles(MagicManager.java:120)
+
+	ExCareerWar (excareerwar), Version: 1.0-SNAPSHOT
+		at TRANSFORMER/excareerwar@1.0-SNAPSHOT/net.exmo.excareerwar.content.skills.ErlangShen.RootPurpose.extracted(RootPurpose.java:93)
+Stacktrace:
+	at io.redspace.ironsspellbooks.capabilities.magic.MagicManager.spawnParticles(MagicManager.java:120) ~[irons-spells-n-spellbooks-855414-5934925_mapped_official_1.20.1.jar%23206!/:1.20.1-3.4.0.5] {re:classloading}
+	at net.exmo.excareerwar.content.skills.ErlangShen.RootPurpose.extracted(RootPurpose.java:93) ~[%23196!/:?] {re:classloading}
+	at net.exmo.excareerwar.content.skills.ErlangShen.RootPurpose.use(RootPurpose.java:59) ~[%23196!/:?] {re:classloading}
+	at net.exmo.excareerwar.content.SkillHandle.useSkill(SkillHandle.java:305) ~[%23196!/:?] {re:classloading}
+	at net.exmo.excareerwar.network.Skill3Message.pressAction(Skill3Message.java:54) ~[%23196!/:?] {re:classloading}
+	at net.exmo.excareerwar.init.CareerWarModKeyMappings$3.setDown(CareerWarModKeyMappings.java:59) ~[%23196!/:?] {re:classloading}
+	at net.minecraft.client.KeyMapping.set(KeyMapping.java:54) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar%23191!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.KeyboardHandler.keyPress(KeyboardHandler.java:422) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar%23191!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.KeyboardHandler.lambda$setup$8(KeyboardHandler.java:462) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar%23191!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:90) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar%23191!/:?] {re:computing_frames,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.KeyboardHandler.lambda$setup$9(KeyboardHandler.java:461) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar%23191!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at org.lwjgl.glfw.GLFWKeyCallbackI.callback(GLFWKeyCallbackI.java:44) ~[lwjgl-glfw-3.3.1.jar%23163!/:build 7] {}
+	at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.3.1.jar%23175!/:build 7] {}
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403) ~[lwjgl-glfw-3.3.1.jar%23163!/:build 7] {}
+	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:175) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar%23191!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:188) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar%23191!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+-- Affected level --
+Details:
+	All players: 1 total; [LocalPlayer['Dev'/105, l='ClientLevel', x=9.87, y=-60.00, z=10.27]]
+	Chunk stats: 961, 609
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (0,-60,0), Section: (at 0,4,0 in 0,-4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 591082 game time, 59265 day time
+	Server brand: forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.ClientLevel.fillReportDetails(ClientLevel.java:455) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:architectury.mixins.json:MixinClientLevel,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.fillReport(Minecraft.java:2319) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:mixin,pl:accesstransformer:B,xf:fml:customskinloader:MinecraftTransformer,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,xf:fml:customskinloader:MinecraftTransformer,pl:mixin:APP:excareerwar.mixins.json:MinecraftMixin,pl:mixin:APP:tslatentitystatus.mixins.json:client.MinecraftMixin,pl:mixin:APP:moonlight-common.mixins.json:MinecraftMixin,pl:mixin:APP:mixins.irons_spellbooks.json:MinecraftMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:740) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:mixin,pl:accesstransformer:B,xf:fml:customskinloader:MinecraftTransformer,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,xf:fml:customskinloader:MinecraftTransformer,pl:mixin:APP:excareerwar.mixins.json:MinecraftMixin,pl:mixin:APP:tslatentitystatus.mixins.json:client.MinecraftMixin,pl:mixin:APP:moonlight-common.mixins.json:MinecraftMixin,pl:mixin:APP:mixins.irons_spellbooks.json:MinecraftMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:218) ~[forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.3.12.jar:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.3.12.jar:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19) ~[fmlloader-1.20.1-47.3.12.jar:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135) ~[fmlloader-1.20.1-47.3.12.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla, mod_resources, Moonlight Mods Dynamic Assets
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.10, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 1233721984 bytes (1176 MiB) / 2982150144 bytes (2844 MiB) up to 6408896512 bytes (6112 MiB)
+	CPUs: 12
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz
+	Identifier: Intel64 Family 6 Model 165 Stepping 3
+	Microarchitecture: unknown
+	Frequency (GHz): 2.90
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: OrayIddDriver Device
+	Graphics card #0 vendor: Shanghai Best Oray Information Technology Co., Ltd.
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: DriverVersion=17.1.58.818
+	Graphics card #1 name: NVIDIA GeForce GTX 960
+	Graphics card #1 vendor: NVIDIA (0x10de)
+	Graphics card #1 VRAM (MB): 2048.00
+	Graphics card #1 deviceId: 0x1401
+	Graphics card #1 versionInfo: DriverVersion=32.0.15.6590
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.67
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 2.67
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 41854.40
+	Virtual memory used (MB): 28805.88
+	Swap memory total (MB): 17408.00
+	Swap memory used (MB): 361.78
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.3.1 build 7
+	Backend API: NVIDIA GeForce GTX 960/PCIe/SSE2 GL version 4.6.0 NVIDIA 565.90, NVIDIA Corporation
+	Window size: 1920x1009
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: vanilla, mod_resources, Moonlight Mods Dynamic Assets
+	Current Language: zh_cn
+	CPU: 12x Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/105, l='ServerLevel[新的世界]', x=9.87, y=-60.00, z=10.27]]
+	Data Packs: vanilla, mod:attributeslib (incompatible), mod:excareerwar, mod:damage_number (incompatible), mod:geckolib, mod:playeranimator (incompatible), mod:irons_spellbooks, mod:caelus (incompatible), mod:forge, mod:exmodifier (incompatible), mod:curios (incompatible), mod:placebo (incompatible), mod:packetfixer (incompatible), mod:tslatentitystatus, mod:reflections, mod:jade (incompatible), mod:customskinloader (incompatible), mod:xlpackets (incompatible), mod:jei, mod:attributefix (incompatible), mod:mcwifipnp, mod:mixinextras (incompatible), mod:architectury (incompatible), mod:l2library (incompatible), mod:cloth_config (incompatible), mod:l2damagetracker (incompatible), mod:moonlight (incompatible), mod:dummmmmmy (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.12.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.12.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.12.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.12.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.12.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		forge-1.20.1-47.3.12_mapped_official_1.20.1-recomp|Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		TES-forge-1.20.1-[0,40.0.0)_mapped_official_1.20.1|TES                           |tslatentitystatus             |1.5.1               |DONE      |Manifest: NOSIGNATURE
+		main                                              |ExCareerWar                   |excareerwar                   |1.0-SNAPSHOT        |DONE      |Manifest: NOSIGNATURE
+		damage_number-[0,20.0.0)_mapped_official_1.20.1.ja|Damage Number                 |damage_number                 |1.3.1               |DONE      |Manifest: NOSIGNATURE
+		selene-499980-6009554_mapped_official_1.20.1.jar  |Moonlight Library             |moonlight                     |1.20-2.13.41        |DONE      |Manifest: NOSIGNATURE
+		reflections-mod-0.10.2_mapped_official_1.20.1.jar |reflections-Mod               |reflections                   |1.0-SNAPSHOT        |DONE      |Manifest: NOSIGNATURE
+		Jade-[0,40.0.0)_mapped_official_1.20.1.jar        |Jade                          |jade                          |11.10.1+forge       |DONE      |Manifest: NOSIGNATURE
+		geckolib-[0,40.0.0)_mapped_official_1.20.1.jar    |GeckoLib 4                    |geckolib                      |4.4.9               |DONE      |Manifest: NOSIGNATURE
+		customskinloader-[0,40.0.0)_mapped_official_1.20.1|CustomSkinLoader              |customskinloader              |14.21.2             |DONE      |Manifest: NOSIGNATURE
+		player-animation-lib-[0,40.0.0)_mapped_official_1.|Player Animator               |playeranimator                |1.0.2-rc1+1.20      |DONE      |Manifest: NOSIGNATURE
+		xlpackets-1.18.2-[0,40.0.0)_mapped_official_1.20.1|XL Packets                    |xlpackets                     |1.18.2-2.1          |DONE      |Manifest: NOSIGNATURE
+		jei-[0,40.0.0)_mapped_official_1.20.1.jar         |Just Enough Items             |jei                           |15.12.2.51          |DONE      |Manifest: NOSIGNATURE
+		attributefix-[0,40.0.0)_mapped_official_1.20.1.jar|AttributeFix                  |attributefix                  |21.0.4              |DONE      |Manifest: NOSIGNATURE
+		caelus-308989-5281700_mapped_official_1.20.1.jar  |Caelus API                    |caelus                        |3.2.0+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		exmodifier-[0.0361,0.363)_mapped_official_1.20.1.j|ExModifier                    |exmodifier                    |0.0363              |DONE      |Manifest: NOSIGNATURE
+		curios-[0,40.0.0)_mapped_official_1.20.1.jar      |Curios API                    |curios                        |5.10.0+1.20.1       |DONE      |Manifest: NOSIGNATURE
+		Placebo-1.20.1-[0,40.0.0)_mapped_official_1.20.1.j|Placebo                       |placebo                       |8.6.2               |DONE      |Manifest: NOSIGNATURE
+		mcwifipnp-[0,40.0.0)_mapped_official_1.20.1.jar   |LAN World Plug-n-Play         |mcwifipnp                     |1.7.3               |DONE      |Manifest: NOSIGNATURE
+		ApothicAttributes-1.20.1-[0,40.0.0)_mapped_officia|Apothic Attributes            |attributeslib                 |1.3.7               |DONE      |Manifest: NOSIGNATURE
+		irons-spells-n-spellbooks-855414-5934925_mapped_of|Iron's Spells 'n Spellbooks   |irons_spellbooks              |1.20.1-3.4.0.5      |DONE      |Manifest: NOSIGNATURE
+		mixinextras-forge-0.2.0-beta.8.jar                |MixinExtras                   |mixinextras                   |0.2.0-beta.8        |DONE      |Manifest: NOSIGNATURE
+		architectury-[9.2.0,9.2.18)_mapped_official_1.20.1|Architectury                  |architectury                  |9.2.14              |DONE      |Manifest: NOSIGNATURE
+		l2library-[0,40.0.0)_mapped_official_1.20.1.jar   |L2 Library                    |l2library                     |2.4.23              |DONE      |Manifest: NOSIGNATURE
+		clothconfig-[0,40.0.0)_mapped_official_1.20.1.jar |Cloth Config v10 API          |cloth_config                  |11.1.136            |DONE      |Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |47.3.12             |DONE      |Manifest: NOSIGNATURE
+		packetfixer-[0,40.0.0)_mapped_official_1.20.1.jar |Packet Fixer                  |packetfixer                   |1.4.2               |DONE      |Manifest: NOSIGNATURE
+		mmmmmmmmmmmm-225738-5737040_mapped_official_1.20.1|MmmMmmMmmmmm                  |dummmmmmy                     |1.20-2.0.2          |DONE      |Manifest: NOSIGNATURE
+		l2damagetracker-0.3.7.jar                         |L2 Damage Tracker             |l2damagetracker               |0.3.7               |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 1388013b-be6a-40b8-beb1-bdb1a849a743
+	FML: 47.3
+	Forge: net.minecraftforge:47.3.12

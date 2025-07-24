@@ -1,0 +1,6 @@
+{
+    "parent": "excareerwar:item/crossbow_plus",
+    "textures": {
+        "layer0": "excareerwar:item/crossbow_pulling_1"
+    }
+}
