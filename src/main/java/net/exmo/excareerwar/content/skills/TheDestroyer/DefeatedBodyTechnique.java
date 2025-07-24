@@ -55,7 +55,6 @@ public class DefeatedBodyTechnique extends CareerSkill {
 
     @Override
     public void use(Player player) {
-        if (player.level().isClientSide)return;
        if( SkillHandle.getSkillV(player, getLocalName())>0 &&SkillHandle.getSkillV( player,getLocalName())<this.CoolDown*0.5){
            player.getPersistentData().putInt("DefeatedBodyTechniqueP",0);
 
@@ -72,7 +71,7 @@ public class DefeatedBodyTechnique extends CareerSkill {
                 if (level instanceof ServerLevel serverLevel){
                     Vec3 first = player.position();
                     SkillHandle.sendParticleCircle(serverLevel, player, ParticleTypes.LARGE_SMOKE, 3, 7);
-                    player.teleportTo(player.getPersistentData().getDouble("FirstPosDBTX"), player.getPersistentData().getDouble("FirstPosDBTY"), player.getPersistentData().getDouble("FirstPosDBTZ"));
+                    if (!level.isClientSide) player.teleportTo(player.getPersistentData().getDouble("FirstPosDBTX"), player.getPersistentData().getDouble("FirstPosDBTY"), player.getPersistentData().getDouble("FirstPosDBTZ"));
                     {
                         player.playSound(SoundEvents.TRIDENT_RETURN);
                         final Vec3 _center = player.position();
@@ -138,10 +137,11 @@ public class DefeatedBodyTechnique extends CareerSkill {
                     shadow.setShatterDamage(1);
                     shadow.setDeathTimer((int) (this.CoolDown*0.25));
                     level.addFreshEntity(shadow);
-                    player.getPersistentData().putDouble("FirstPosDBTX", player.getX());
-                    player.getPersistentData().putDouble("FirstPosDBTY", player.getY());
-                    player.getPersistentData().putDouble("FirstPosDBTZ", player.getZ());
-
+                    if (!level.isClientSide) {
+                        player.getPersistentData().putDouble("FirstPosDBTX", player.getX());
+                        player.getPersistentData().putDouble("FirstPosDBTY", player.getY());
+                        player.getPersistentData().putDouble("FirstPosDBTZ", player.getZ());
+                    }
                 }
                 Vec3 first = player.position();
 
@@ -180,7 +180,7 @@ public class DefeatedBodyTechnique extends CareerSkill {
 
                     //Invis take 1 tick to set in
                     player.setInvisible(true);
-                    player.addEffect(new MobEffectInstance(MobEffectRegistry.TRUE_INVISIBILITY.get(), 80, 0, false, false, true));
+                    player.addEffect(new MobEffectInstance(MobEffectRegistry.TRUE_INVISIBILITY.get(), 10, 0, false, false, true));
 
                 List<Vec3> vl = PathGenerator.generatePath(new Vec3(dest.x, dest.y, dest.z), first);
                 for (Vec3 v : vl) {

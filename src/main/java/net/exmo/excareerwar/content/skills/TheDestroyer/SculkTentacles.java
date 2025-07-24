@@ -90,8 +90,8 @@ public class SculkTentacles extends CareerSkill {
             if (entityiterator1 instanceof LivingEntity living) {
 
                 if (living.getHealth()<=0)continue;
-                if (!living.hasEffect(MobEffects.BLINDNESS))continue;
-                if (living.getEffect(MobEffects.BLINDNESS).getAmplifier()<8)continue;
+                if (!living.hasEffect(MobEffects.UNLUCK))continue;
+                if (living.getEffect(MobEffects.UNLUCK).getAmplifier()<8)continue;
                 Vec3 center = living.position();
 
                 living.addEffect(new MobEffectInstance(CareerWarModMobEffects.ImprisonMobEffect.get(), 20 * 4, 4, false, false, false));

@@ -71,12 +71,12 @@ public class TheDestroyer extends Career {
     }
 
     public static void addEffectB(LivingEntity entity,int em){
-        if (entity.hasEffect(MobEffects.BLINDNESS)) {
-            int am = entity.getEffect(MobEffects.BLINDNESS).getAmplifier() + em;
-            entity.removeEffect(MobEffects.BLINDNESS);
-            entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20 * 8, am, false, false, false));
+        if (entity.hasEffect(MobEffects.UNLUCK)) {
+            int am = entity.getEffect(MobEffects.UNLUCK).getAmplifier() + em;
+            entity.removeEffect(MobEffects.UNLUCK);
+            entity.addEffect(new MobEffectInstance(MobEffects.UNLUCK, 20 * 8, am, false, false, false));
         } else
-            entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20 * 8, 0, false, false, false));
+            entity.addEffect(new MobEffectInstance(MobEffects.UNLUCK, 20 * 8, 0, false, false, false));
 
     }
     @SubscribeEvent
