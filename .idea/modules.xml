@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExCareerWar.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ExCareerWar.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExCareerWar.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ExCareerWar.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.exmo.ExCareerWar.test.iml" filepath="$PROJECT_DIR$/.idea/modules/net.exmo.ExCareerWar.test.iml" />
     </modules>
   </component>
 </project>

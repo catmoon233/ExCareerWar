@@ -6,6 +6,7 @@ import net.exmo.exmodifier.util.ItemKit;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -45,7 +46,10 @@ public abstract   class Career {
               ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
               if (!itemstackiterator.isEmpty()) {
 
-                if (itemstackiterator.hasTag() && itemstackiterator.getTag().getBoolean("CareerItems")) {
+                if (itemstackiterator.hasTag() && (itemstackiterator.getTag().getBoolean("CareerItems") || itemstackiterator.getTag().getBoolean("Bind"))) {
+                  player.getInventory().setItem(_idx, ItemStack.EMPTY);
+                }else
+                if (itemstackiterator.getItem() instanceof ArrowItem){
                   player.getInventory().setItem(_idx, ItemStack.EMPTY);
                 }
 

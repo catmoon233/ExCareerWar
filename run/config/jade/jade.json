@@ -27,13 +27,13 @@
     "overlaySquare": false,
     "flipMainHand": false,
     "autoScaleThreshold": 0.4,
-    "overlayPosY": 1.0,
-    "overlayScale": 1.0,
+    "overlayPosY": 0.93,
+    "overlayScale": 1.2,
     "overlayAnchorX": 0.5,
     "overlayAnchorY": 0.0,
     "activeTheme": "jade:dark",
     "themesHash": -328442023,
-    "overlayPosX": 0.5
+    "overlayPosX": 0.8
   },
   "formatting": {
     "modName": "§9§o%s"

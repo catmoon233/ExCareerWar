@@ -90,6 +90,11 @@ public class Excareerwar {
                 .decoder(DashMessage3::decode)
                 .consumerMainThread(DashMessage3::handle)
                 .add();
+        PACKET_HANDLER.messageBuilder(UseSkillMessage.class, messageID++)
+                .encoder(UseSkillMessage::encode)
+                .decoder(UseSkillMessage::decode)
+                .consumerMainThread(UseSkillMessage::handle)
+                .add();
         PACKET_HANDLER.messageBuilder(BlindnessChangeMessage.class, messageID++)
                 .encoder(BlindnessChangeMessage::encode)
                 .decoder(BlindnessChangeMessage::decode)

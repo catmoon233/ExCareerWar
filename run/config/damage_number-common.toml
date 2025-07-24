@@ -1,7 +1,7 @@
 show = true
 
 [number]
-	x = -200
+	x = -60
 	y = 100
 	#Range: 0.0 ~ 10.0
 	scale = 2.5
@@ -10,38 +10,38 @@ show = true
 	show = true
 
 [title]
-	x = -200
+	x = 10000
 	y = 75
 	#Range: 0.0 ~ 10.0
-	scale = 1.8
+	scale = 1.7999999523162842
 	#Range: 0.0 ~ 1.0
 	opacity = 1.0
 	show = true
 
 [combo]
-	x = -210
-	y = 125
+	x = -60
+	y = 90
 	#Range: 0.0 ~ 1.0
 	opacity = 1.0
 	#Range: 0.0 ~ 10.0
-	scale = 1.2
+	scale = 1.2000000476837158
 	show = true
 
 [damage_list]
-	x = -120
-	y = 100
+	x = -40
+	y = 120
 	#Range: 0.0 ~ 1.0
 	opacity = 1.0
 	#Range: 0.0 ~ 10.0
-	scale = 0.8
-	max_size = 100
+	scale = 0.800000011920929
+	max_size = 10
 	show = true
 
 [damage_rank]
 	#Use damage ranked style
 	enable = false
 	#Use format like "<damage amount>|<rank name>|<render color>"
-	option = ["0|D|#ffffff", "20|C|#e6fffb", "50|B|#bae7ff", "100|A|#bae637", "200|S|#fff566", "400|SS|#ffbb96", "800|SSS|#ffa39e"]
+	option = ["0|D|16777215", "20|C|15138811", "50|B|12249087", "100|A|12248631", "200|S|16774502", "400|SS|16759702", "800|SSS|16753566"]
 
 	[damage_rank.color]
 		#Color the damage number
@@ -55,7 +55,7 @@ show = true
 	#Use combo ranked style
 	enable = false
 	#Use format like "<combo>|<rank name>|<render color>"
-	option = ["0|D|#ffffff", "5|C|#e6fffb", "10|B|#bae7ff", "20|A|#bae637", "40|S|#fff566", "80|SS|#ffbb96", "160|SSS|#ffa39e"]
+	option = ["0|D|16777215", "5|C|15138811", "10|B|12249087", "20|A|12248631", "40|S|16774502", "80|SS|16759702", "160|SSS|16753566"]
 
 	[combo_rank.color]
 		#Color the damage number

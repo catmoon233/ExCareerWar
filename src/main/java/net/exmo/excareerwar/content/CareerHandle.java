@@ -396,7 +396,7 @@ public class CareerHandle {
 										a = "八";
 									}
 									if (a.isEmpty()) a = i + "";
-									serverPlayer.playNotifySound(SoundEvents.NOTE_BLOCK_PLING.get(), SoundSource.PLAYERS, 1.0f, 1.0f);
+								//	serverPlayer.playNotifySound(SoundEvents.NOTE_BLOCK_PLING.get(), SoundSource.PLAYERS, 1.0f, 1.0f);
 									serverPlayer.sendSystemMessage(Component.translatable("message.excareerwar.cooldown_end", a).withStyle(ChatFormatting.GREEN), true);
 								}
 							}

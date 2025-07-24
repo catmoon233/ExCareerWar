@@ -10,6 +10,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.util.LazyOptional;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -32,6 +33,11 @@ public class MinecraftMixin {
 
         if (pEntity instanceof ArmorStand) cir.setReturnValue(false);
         LocalPlayer player = Minecraft.getInstance().player;
+        if (pEntity  instanceof Player player1) {
+            if (player1.getTeam()!=null && player1.getTeam().isAlliedTo(player1.getTeam())){
+                cir.setReturnValue(true);
+            }
+        }
         if (pEntity instanceof WolfProjectile wolfProjectile){
             if (wolfProjectile.getOwner() == player){
                 cir.setReturnValue(true);

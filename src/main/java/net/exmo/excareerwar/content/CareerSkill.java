@@ -4,7 +4,9 @@ import io.redspace.ironsspellbooks.api.entity.IMagicEntity;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import io.redspace.ironsspellbooks.api.spells.CastSource;
+import net.exmo.excareerwar.Excareerwar;
 import net.exmo.excareerwar.network.CareerWarModVariables;
+import net.exmo.excareerwar.network.UseSkillMessage;
 import net.exmo.excareerwar.util.AutoInit;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -30,6 +32,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.network.PacketDistributor;
 import org.openjdk.nashorn.internal.ir.CallNode;
 
 import java.util.List;
@@ -119,8 +122,12 @@ public  class CareerSkill {
 		 MinecraftForge.EVENT_BUS.post(new UseSkillEvent(player,this.LocalName,this.CoolDown));
 		 CareerWarModVariables.PlayerVariables v = player.getCapability(CareerWarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CareerWarModVariables.PlayerVariables());
 		 if (v.playercooldown.containsKey(this.LocalName) && Integer.valueOf(v.playercooldown.get(this.LocalName)) !=0) return false;
+		 if (player.level().isClientSide)return true ;
+
 		 player.getCapability(CareerWarModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 
+			 UseSkillMessage message = new UseSkillMessage(getLocalName());
+			 Excareerwar.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) player), message);
 			 Map<String, Integer> map = capability.playercooldown;
 			 if (map.containsKey(this.LocalName))map.remove(this.LocalName);
 			 map.put(this.LocalName, (this.CoolDown));

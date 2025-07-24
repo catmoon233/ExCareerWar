@@ -11,11 +11,14 @@
     "ContainerMixin",
     "JumpMixin",
     "MagicArrowProjectileMixin",
-    "SwingMixin",
+    "ProjectileMixin",
+    "SwingMixin"
   ],
   "client": [
     "ClientEntityMixin",
-    "MinecraftMixin"
+    "MinecraftMixin",
+
+    "SimpleHealthMixin"
   ],
   "injectors": {
     "defaultRequire": 1

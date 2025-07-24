@@ -24,8 +24,8 @@ public class CantGetTippedArrow
     @Inject(at = @At("HEAD"), method = "getPickupItem", cancellable = true)
     public void getPickupItem(CallbackInfoReturnable<ItemStack> cir)
     {
-        if (!this.effects.isEmpty() || this.potion!=Potions.EMPTY){
+        //if (!this.effects.isEmpty() || this.potion!=Potions.EMPTY){
             cir.setReturnValue(ItemStack.EMPTY);
-        }
+       // }
     }
 }

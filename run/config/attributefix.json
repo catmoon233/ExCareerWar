@@ -242,17 +242,6 @@
         "value": 100
       }
     },
-    "exmodifier:max_injury_free": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 10000000,
-        "value": 10000000
-      }
-    },
     "forge:entity_reach": {
       "enabled": false,
       "min": {
@@ -262,6 +251,17 @@
       "max": {
         "default": 1024,
         "value": 1024
+      }
+    },
+    "exmodifier:max_injury_free": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 10000000,
+        "value": 10000000
       }
     },
     "l2damagetracker:damage_absorption": {

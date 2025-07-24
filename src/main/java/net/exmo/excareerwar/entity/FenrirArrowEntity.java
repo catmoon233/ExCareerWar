@@ -2,7 +2,9 @@ package net.exmo.excareerwar.entity;
 
 import net.exmo.excareerwar.init.CareerWarModEntities;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -11,10 +13,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.*;
 import net.minecraftforge.network.PlayMessages;
 
 import java.util.List;
@@ -58,7 +57,13 @@ public class FenrirArrowEntity extends AbstractArrow {
                 double dist = Math.sqrt(dx * dx + dz * dz);
                 if (dist > 1e-6) {
                     double knockbackStrength = 1;
+
                     livingEntity.push(dx / dist * knockbackStrength, 0.5, dz / dist * knockbackStrength);
+                    if (livingEntity instanceof ServerPlayer serverPlayer){
+                        Vec3 vec3 = new Vec3(dx / dist * knockbackStrength, 0.5, dz / dist * knockbackStrength);
+                        serverPlayer.connection
+                                .send(new ClientboundSetEntityMotionPacket(serverPlayer.getId(),vec3));
+                    }
                     livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 1));
                 }
             }
@@ -96,6 +101,11 @@ public class FenrirArrowEntity extends AbstractArrow {
                         double knockbackStrength = 1;
                         livingEntity.push(dx / dist * knockbackStrength, 0.5, dz / dist * knockbackStrength);
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 1));
+                        if (livingEntity instanceof ServerPlayer serverPlayer){
+                            Vec3 vec3 = new Vec3(dx / dist * knockbackStrength, 0.5, dz / dist * knockbackStrength);
+                            serverPlayer.connection
+                                    .send(new ClientboundSetEntityMotionPacket(serverPlayer.getId(),vec3));
+                        }
                     }
                 }
 

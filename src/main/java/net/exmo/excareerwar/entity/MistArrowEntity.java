@@ -1,5 +1,6 @@
 package net.exmo.excareerwar.entity;
 
+import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import net.exmo.excareerwar.Excareerwar;
 import net.exmo.excareerwar.init.CareerWarModEntities;
 import net.minecraft.core.particles.ParticleTypes;
@@ -60,18 +61,17 @@ public class MistArrowEntity extends AbstractArrow {
 
     private void applyEffects(LivingEntity entity) {
         // 添加减速效果
-        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
+        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1, 2));
         // 添加毒素伤害
-        entity.addEffect(new MobEffectInstance(MobEffects.POISON, 60, 1));
-        entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 60, 1));
-        entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 60, 1));
+        entity.addEffect(new MobEffectInstance(MobEffects.POISON, 2, 1));
+        entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 40, 1));
     }
     private void applyEffects2(LivingEntity entity) {
         // 添加减速效果
-        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 2));
+        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1, 2));
         // 添加毒素伤害
 
-        entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 60, 1));
+        entity.addEffect(new MobEffectInstance(MobEffectRegistry.TRUE_INVISIBILITY.get(), 1, 1));
 
     }
 
@@ -105,21 +105,7 @@ public class MistArrowEntity extends AbstractArrow {
         this.discard(); // 爆炸后销毁箭矢
     }
 
-    private void applyAreaEffects() {
-        // 获取半径4-5格范围内的所有实体
-        java.util.List<Entity> entities = level().getEntities(this, this.getBoundingBox().inflate(5));
-        for (Entity entity : entities) {
-            if (entity != this){
-            if (entity instanceof LivingEntity livingEntity && !entity.equals(this.getOwner())) {
-                if (!isSameTeam(entity, this.getOwner())) {
-                    applyEffects(livingEntity);
-                } else {
-                    applyEffects2(livingEntity);
-                }
-            }
-            }
-        }
-    }
+
 
     // 生成随机持续时间（5-7秒）
     private int getRandomDuration() {

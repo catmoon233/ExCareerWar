@@ -58,7 +58,7 @@ public class MagicArrowProjectileMixin {
                 if (entity instanceof LivingEntity livingEntity && livingEntity.isAlive() && livingEntity!= owner && !isSameTeam(entity, owner)){
                     livingEntity.hurt(new DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), magicArrow), 3);
                     livingEntity.addEffect(new MobEffectInstance(CareerWarModMobEffects.VULNERABILITY.get(), 100, 0));
-                    livingEntity.addEffect(new MobEffectInstance(CareerWarModMobEffects.ImprisonMobEffect.get(), 10, 5));
+                    livingEntity.addEffect(new MobEffectInstance(CareerWarModMobEffects.ImprisonMobEffect.get(), 30, 5));
                     livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 10, 5));
                 }
             }
@@ -92,7 +92,7 @@ public class MagicArrowProjectileMixin {
                 if (entity instanceof LivingEntity livingEntity && livingEntity.isAlive() && livingEntity!= owner && !isSameTeam(entity, owner)){
                     livingEntity.hurt(new DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), magicArrow), 3);
                     livingEntity.addEffect(new MobEffectInstance(CareerWarModMobEffects.VULNERABILITY.get(), 100, 0));
-                    livingEntity.addEffect(new MobEffectInstance(CareerWarModMobEffects.ImprisonMobEffect.get(), 10, 5));
+                    livingEntity.addEffect(new MobEffectInstance(CareerWarModMobEffects.ImprisonMobEffect.get(), 30, 5));
                     livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 10, 5));
                 }
             }

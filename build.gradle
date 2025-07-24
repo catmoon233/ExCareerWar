@@ -163,6 +163,7 @@ dependencies {
     implementation fg.deobf(jarJar("mod.arcomit:emberthral:1.0.1")){
         jarJar.ranged(it, "[1.0.0,)")
     }
+    implementation fg.deobf("curse.maven:health-indicator-txf-883384:6596786")
     implementation fg.deobf("curse.maven:caelus-308989:5281700")
     implementation fg.deobf("curse.maven:selene-499980:6009554")
     implementation fg.deobf("curse.maven:mmmmmmmmmmmm-225738:5737040")
@@ -185,6 +186,7 @@ dependencies {
     implementation fg.deobf(jarJar("Placebo-1.20.1:Placebo-1.20.1:[0,40.0.0)"))
     runtimeOnly fg.deobf(jarJar("mcwifipnp:mcwifipnp:[0,40.0.0)"))
  //   runtimeOnly jarJar("oculus:oculus:[0,40.0.0)")
+    implementation fg.deobf("curse.maven:modern-ui-352491:6199942")
     runtimeOnly fg.deobf(jarJar("packetfixer:packetfixer:[0,40.0.0)"))
     implementation fg.deobf(jarJar("player-animation-lib:player-animation-lib:[0,40.0.0)"))
     runtimeOnly fg.deobf(jarJar("TES-forge-1.20.1:TES-forge-1.20.1:[0,40.0.0)"))
